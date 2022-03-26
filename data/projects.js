@@ -7,7 +7,7 @@ const data = [
   },
   {
     name: 'Department of Vocational Vocational',
-    description: 'Web site for Department',
+    description: 'Web site for Department in Reactjs',
     url: 'https://fcdepofvocation.netlify.app',
     url_name: 'fcdepofvocation',
   },

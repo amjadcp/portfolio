@@ -53,24 +53,9 @@ const data = [
     link: 'assets/img/achivements/9.jpeg',
   },
   {
-    img: 'assets/img/achivements/10.jpeg',
-    headset: 'assets/img/achivements/10.jpeg',
-    link: 'assets/img/achivements/10.jpeg',
-  },
-  {
-    img: 'assets/img/achivements/11.jpeg',
-    headset: 'assets/img/achivements/11.jpeg',
-    link: 'assets/img/achivements/11.jpeg',
-  },
-  {
     img: 'assets/img/achivements/12.jpeg',
     headset: 'assets/img/achivements/12.jpeg',
     link: 'assets/img/achivements/12.jpeg',
-  },
-  {
-    img: 'assets/img/achivements/13.jpeg',
-    headset: 'assets/img/achivements/13.jpeg',
-    link: 'assets/img/achivements/13.jpeg',
   },
   {
     img: 'assets/img/achivements/15.png',
@@ -78,9 +63,34 @@ const data = [
     link: 'assets/img/achivements/15.png',
   },
   {
+    img: 'assets/img/achivements/13.jpeg',
+    headset: 'assets/img/achivements/13.jpeg',
+    link: 'assets/img/achivements/13.jpeg',
+  },
+  {
+    img: 'assets/img/achivements/10.jpeg',
+    headset: 'assets/img/achivements/10.jpeg',
+    link: 'assets/img/achivements/10.jpeg',
+  },
+  {
     img: 'assets/img/achivements/16.jpeg',
     headset: 'assets/img/achivements/16.jpeg',
     link: 'assets/img/achivements/16.jpeg',
+  },
+  {
+    img: 'assets/img/achivements/excom.jpeg',
+    headset: 'assets/img/achivements/excom.jpeg',
+    link: 'assets/img/achivements/excom.jpeg',
+  },
+  {
+    img: 'assets/img/achivements/11.jpeg',
+    headset: 'assets/img/achivements/11.jpeg',
+    link: 'assets/img/achivements/11.jpeg',
+  },
+  {
+    img: 'assets/img/achivements/reboot.jpeg',
+    headset: 'assets/img/achivements/reboot.jpeg',
+    link: 'assets/img/achivements/reboot.jpeg',
   },
 ]
 
