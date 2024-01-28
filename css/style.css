@@ -1,0 +1,30 @@
+*{
+  background-color: #1e2529;
+  color: #247954;
+  font-family: 'Courier New', Courier, monospace;
+} 
+ /* a{
+   color: #181818;
+ } */
+ a:hover,a:focus{
+   background: #181818;
+   color:#fff;
+ }
+ input[type="text"]{
+   max-width: 10em;
+   border: none;
+   /* font-family: inherit; */
+   padding:0 .5em;
+   font-size: 16px;
+ }
+ input[type="text"]:focus{
+   /* color: #000; */
+   outline:none;
+ }
+ .command{
+   /* display: block; */
+   /* max-width: 20em; */
+   /* color: #181818; */
+   /* font-weight: 700; */
+   /* margin: 2em 0; */
+ }
