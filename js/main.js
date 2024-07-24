@@ -8,7 +8,7 @@ const inject = async (command) => {
   }        
   block.innerHTML += `
     <br> <span class="command">amjadcp:~$ ${command}</span>
-    <br> <span class="command">${await data.text()}</span>
+    <br> ${await data.text()}
   `;
 };
 

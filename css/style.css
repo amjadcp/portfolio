@@ -1,30 +1,31 @@
-*{
+* {
   background-color: #1e2529;
   color: #247954;
-  font-family: 'Courier New', Courier, monospace;
-} 
- /* a{
-   color: #181818;
- } */
- a:hover,a:focus{
-   background: #181818;
-   color:#fff;
- }
- input[type="text"]{
-   max-width: 10em;
-   border: none;
-   /* font-family: inherit; */
-   padding:0 .5em;
-   font-size: 16px;
- }
- input[type="text"]:focus{
-   /* color: #000; */
-   outline:none;
- }
- .command{
-   /* display: block; */
-   /* max-width: 20em; */
-   /* color: #181818; */
-   /* font-weight: 700; */
-   /* margin: 2em 0; */
- }
+  font-family: "Courier New", Courier, monospace;
+}
+
+a:hover,
+a:focus {
+  background: #181818;
+  color: #fff;
+}
+
+input[type="text"] {
+  max-width: 100%; /* Change max-width to 100% */
+  width: 100%; /* Set width to 100% */
+  border: none;
+  padding: 0 0.5em;
+  font-size: 16px;
+  box-sizing: border-box; /* Include padding and border in the width */
+  margin-left: 0.5em; /* Optional: Add space between the text and input */
+}
+
+input[type="text"]:focus {
+  outline: none;
+}
+
+
+.command {
+  display: flex; /* Use flexbox to align items in a row */
+  align-items: center; /* Center items vertically */
+}
