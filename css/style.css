@@ -1,5 +1,5 @@
 * {
-  background-color: #1e2529;
+  background-color: #000000;
   color: #247954;
   font-family: "Courier New", Courier, monospace;
 }
@@ -28,4 +28,30 @@ input[type="text"]:focus {
 .command {
   display: flex; /* Use flexbox to align items in a row */
   align-items: center; /* Center items vertically */
+}
+
+
+.cursor {
+  position: relative;
+}
+.cursor i {
+  position: absolute;
+  width: 1px;
+  height: 80%;
+  background-color: gray;
+  left: 5px;
+  top: 10%;
+  animation-name: blink;
+  animation-duration: 800ms;
+  animation-iteration-count: infinite;
+  opacity: 1;
+}
+
+.cursor input:focus + i {
+  display: none;
+}
+
+@keyframes blink {
+  from { opacity: 1; }
+  to { opacity: 0; }
 }
