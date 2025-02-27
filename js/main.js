@@ -21,15 +21,15 @@ window.onload = async (e) => {
   input.addEventListener("keyup", async function (e) {
     if ((e.keyCode || e.which) == 13) {
       // ENTER key pressed
-      if (input.value == "clear") {
+      if (input.value.toLowerCase() == "clear") {
         block.innerHTML = "";
-      } else if (input.value == "all") {
+      } else if (input.value.toLowerCase() == "all") {
         await inject("about");
         await inject("experience");
         await inject("skill");
         await inject("connect");
       } else {
-        await inject(input.value);
+        await inject(input.value.toLowerCase());
       }
       input.value = "";
     }
