@@ -7,7 +7,10 @@ const scrollToCommand = (command) => {
     if (commandBlocks.length > 0) {
       // For 'all' command, scroll to the first block (about)
       if (command === 'all') {
-        commandBlocks[0].scrollIntoView({ behavior: 'smooth', block: 'start' });
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
       } else {
         // For specific commands, find the matching block
         const lastBlock = commandBlocks[commandBlocks.length - 1];
@@ -29,7 +32,6 @@ const inject = async (command) => {
       ${response}
     </div>
   `;
-  scrollToCommand(command);
 };
 
 window.onload = async (e) => {
@@ -46,12 +48,15 @@ window.onload = async (e) => {
       if (input.value.toLowerCase() == "clear") {
         block.innerHTML = "";
       } else if (input.value.toLowerCase() == "all") {
+        block.innerHTML = ""; // Clear existing content
         await inject("about");
         await inject("experience");
         await inject("skill");
         await inject("connect");
+        scrollToCommand("all");
       } else {
         await inject(input.value.toLowerCase());
+        scrollToCommand(input.value.toLowerCase());
       }
       input.value = "";
     }
