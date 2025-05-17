@@ -1,33 +1,70 @@
 * {
-  background-color: #282828;
-  color: #fafafa;
-  font-family: "Courier New", Courier, monospace;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-a:hover,
-a:focus {
-  background: #181818;
-  color: #fff;
+body {
+  background-color: #1a1a1a;
+  color: #fafafa;
+  font-family: "Fira Code", "Courier New", monospace;
+  line-height: 1.6;
+  padding: 2rem;
+  min-height: 100vh;
+  background-image: 
+    linear-gradient(rgba(40, 40, 40, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(40, 40, 40, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+#block {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem;
+  padding-bottom: 5rem; /* Add padding to prevent content from being hidden behind fixed command */
+  flex: 1;
+  width: 100%;
+}
+
+.command {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  font-size: 1rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #1a1a1a;
+  padding: 1rem 2rem;
+  border-top: 1px solid rgba(80, 250, 123, 0.2);
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.command span {
+  color: #50fa7b;
+  margin-right: 0.5rem;
+  white-space: nowrap;
 }
 
 input[type="text"] {
-  max-width: 100%; /* Change max-width to 100% */
-  width: 100%; /* Set width to 100% */
+  background: transparent;
   border: none;
-  padding: 0 0.5em;
-  font-size: 16px;
-  box-sizing: border-box; /* Include padding and border in the width */
-  margin-left: 0.5em; /* Optional: Add space between the text and input */
+  color: #fafafa;
+  font-family: inherit;
+  font-size: 1rem;
+  width: 100%;
+  padding: 0.5rem;
+  caret-color: #50fa7b;
+  animation: blink 1s step-end infinite;
 }
 
 input[type="text"]:focus {
   outline: none;
-}
-
-
-.command {
-  display: flex; /* Use flexbox to align items in a row */
-  align-items: center; /* Center items vertically */
 }
 
 pre {
@@ -35,11 +72,64 @@ pre {
   word-wrap: break-word;
   overflow-x: auto;
   max-width: 100%;
-  border-radius: 5px;
+  padding: 1rem;
+  background-color: rgba(40, 40, 40, 0.5);
+  border-radius: 4px;
+  margin: 1rem 0;
+  border-left: 3px solid #50fa7b;
+}
+
+a {
+  color: #8be9fd;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover,
+a:focus {
+  color: #50fa7b;
+  text-decoration: underline;
+}
+
+@keyframes blink {
+  from, to { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Terminal-like scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #282828;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #50fa7b;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8be9fd;
 }
 
 @media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+  
+  .command {
+    padding: 1rem;
+  }
+  
   pre {
     font-size: 14px;
+    padding: 0.5rem;
+  }
+  
+  .command {
+    font-size: 0.9rem;
   }
 }

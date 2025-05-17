@@ -1,6 +1,13 @@
 let input = document.querySelector("input");
 let block = document.getElementById("block");
 
+const scrollToBottom = () => {
+  window.scrollTo({
+    top: document.body.scrollHeight,
+    behavior: 'smooth'
+  });
+};
+
 const inject = async (command) => {
   let data = await fetch(`commands/${command}.html`);
   if (data.status == 404) {
@@ -10,6 +17,7 @@ const inject = async (command) => {
     <br> <br> <span class="command">amjadcp@web:~$ ${command}</span>
     <br> <br> ${await data.text()} <br> <br>
   `;
+  scrollToBottom();
 };
 
 window.onload = async (e) => {
@@ -18,6 +26,8 @@ window.onload = async (e) => {
   await inject("experience");
   await inject("skill");
   await inject("connect");
+  scrollToBottom();
+  
   input.addEventListener("keyup", async function (e) {
     if ((e.keyCode || e.which) == 13) {
       // ENTER key pressed
