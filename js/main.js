@@ -39,6 +39,8 @@ window.onload = async (e) => {
   await inject("about");
   await inject("experience");
   await inject("skill");
+  await inject("certificate");
+  await inject("project");
   await inject("connect");
   // Don't auto-scroll on initial load
   
@@ -52,6 +54,8 @@ window.onload = async (e) => {
         await inject("about");
         await inject("experience");
         await inject("skill");
+        await inject("certificate");
+        await inject("project");
         await inject("connect");
         scrollToCommand("all");
       } else {

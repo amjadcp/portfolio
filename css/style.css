@@ -60,6 +60,9 @@ input[type="text"] {
   width: 100%;
   padding: 0.5rem;
   caret-color: #50fa7b;
+}
+
+input[type="text"]:not(:focus) {
   animation: blink 1s step-end infinite;
 }
 
