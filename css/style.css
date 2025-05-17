@@ -60,6 +60,9 @@ input[type="text"] {
   width: 100%;
   padding: 0.5rem;
   caret-color: #50fa7b;
+}
+
+input[type="text"]:not(:focus) {
   animation: blink 1s step-end infinite;
 }
 
@@ -91,9 +94,47 @@ a:focus {
   text-decoration: underline;
 }
 
+.command-block {
+  margin: 2rem 0;
+  padding: 1rem;
+  background-color: rgba(40, 40, 40, 0.3);
+  border-radius: 4px;
+  border-left: 3px solid #50fa7b;
+}
+
+.command-block .command {
+  position: static;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.command-block pre {
+  margin: 0;
+  border-left: none;
+}
+
+.typing {
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+}
+
 @keyframes blink {
   from, to { opacity: 1; }
   50% { opacity: 0; }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Terminal-like scrollbar */
@@ -132,26 +173,4 @@ a:focus {
   .command {
     font-size: 0.9rem;
   }
-}
-
-.command-block {
-  margin: 2rem 0;
-  padding: 1rem;
-  background-color: rgba(40, 40, 40, 0.3);
-  border-radius: 4px;
-  border-left: 3px solid #50fa7b;
-}
-
-.command-block .command {
-  position: static;
-  background: transparent;
-  border: none;
-  padding: 0;
-  margin-bottom: 1rem;
-  display: block;
-}
-
-.command-block pre {
-  margin: 0;
-  border-left: none;
 }

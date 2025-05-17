@@ -20,18 +20,52 @@ const scrollToCommand = (command) => {
   }, 100);
 };
 
+const typeText = async (element, text, delay = 5) => {
+  element.classList.add('typing');
+  // Create a temporary div to parse HTML
+  const tempDiv = document.createElement('div');
+  tempDiv.innerHTML = text;
+  const content = tempDiv.textContent;
+  
+  for (let i = 0; i < content.length; i++) {
+    element.textContent += content[i];
+    await new Promise(resolve => setTimeout(resolve, delay));
+  }
+  element.classList.remove('typing');
+};
+
 const inject = async (command) => {
   let data = await fetch(`commands/${command}.html`);
   if (data.status == 404) {
     data = await fetch(`commands/404.html`);
   }
   const response = await data.text();
-  block.innerHTML += `
-    <div class="command-block">
-      <span class="command">amjadcp@web:~$ ${command}</span>
-      ${response}
-    </div>
-  `;
+  
+  // Create new command block
+  const commandBlock = document.createElement('div');
+  commandBlock.className = 'command-block';
+  
+  // Add command prompt
+  const commandPrompt = document.createElement('span');
+  commandPrompt.className = 'command';
+  commandPrompt.textContent = `amjadcp@web:~$ ${command}`;
+  commandBlock.appendChild(commandPrompt);
+  
+  // Add response with typing effect
+  const responseElement = document.createElement('div');
+  responseElement.textContent = '';
+  commandBlock.appendChild(responseElement);
+  
+  // Add to page
+  block.appendChild(commandBlock);
+  
+  // Type out the response
+  await typeText(responseElement, response);
+  
+  // After typing is complete, replace with actual HTML
+  responseElement.innerHTML = response;
+  
+  scrollToCommand(command);
 };
 
 window.onload = async (e) => {
